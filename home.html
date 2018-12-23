@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <style>
+        body{
+            background: #ccc;
+        }
+        #table-data{
+            border: 3px solid green;
+            margin-bottom: 24px;
+        }
+        #table-data thead {
+            background:skyblue;        
+        }
+
+        #student-input-box{
+            border: 3px solid red;
+            padding: 8px;
+            width: 70%;
+        }
+        #student-input-box label{
+            display: table-cell;
+        }
+        #student-input-box>div{
+            display: table-row;
+        }
+        #student-input-box button{
+            padding: 8px 16px;
+            text-transform: uppercase;
+            margin-right: 8px;
+        }
+        #student-input-box input {
+            padding: 8px;
+            border: 1px solid #000;
+            margin: 8px; 
+            display: table-cell;
+        }
+        th{
+            width: 12.5%;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="table-data">
+            <table>
+                <thead>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>emali</th>
+                    <th>class</th>
+                    <th>year</th>
+                    <th>city</th>
+                    <th>country</th>
+                    <th>actions</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>rabi</td>
+                        <td>ravi@gmail.com</td>
+                        <td>x</td>
+                        <td>2000</td>
+                        <td>hyd</td>
+                        <td>ind</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="student-input-box">
+            <div>
+                <label for="id">
+                    StudentId
+                </label>
+                <input type="text" id="id">
+            </div>
+            <div>
+                <label for="name">Student Name</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="mail" id="mail">
+            </div>
+            <div>
+                <label for="class">Class</label>
+                <input type="text" id="class">
+            </div>
+
+            <div>
+                <label for="year">Year</label>
+                <input type="text" id="year">
+            </div>
+            <div>
+                <label for="city">City</label>
+                <input type="text" id="city">
+            </div>
+            <div>
+                <label for="country">Student country</label>
+                <input type="text" id="country">
+            </div>
+            <div>
+                <button id="save-btn">
+                    save
+                </button>
+                <button id="edit-save-btn" style="display:none;">
+                    edit-save
+                </button>
+                <button id="clear-btn">
+                    clear
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+     <script src="./script.js"></script>
+</body>
+
+</html>

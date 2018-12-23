@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+    <style>
+        /* body{
+            background: #e2e2e2;
+
+        } */
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* width: 100vw;
+            height: 100vh; */
+        }
+        .login-section{
+            flex-direction: column;
+            border: 1px solid #ccc;
+            /* background-color: #e2e2e2; */
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            box-shadow: white 2px 3px 2px 2px;
+        }
+        .login-section div{
+            display: table-row;
+        }
+        .login-section input{
+            display: table-cell;
+            padding: 8px;
+            height: 30px;
+            border: 1px solid #000;
+            margin: 8px;   
+            border-radius: 4px;         
+        }
+        .login-section label{
+            display: table-cell;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-section">
+            <h1>Register</h1>
+
+            <div>
+                <label for="firstName">First Name</label>
+                <input type="firstName" id="firstName">
+            </div>
+            <div>
+                <label for="middleName">Middle Name</label>
+                <input type="middleName" id="middleName">
+            </div>
+            <div>
+                <label for="lastName">Last Name</label>
+                <input type="lastName" id="lastName">
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="mail">
+            </div>
+            <div>
+                <label for="mobileNumber">Mobile Number</label>
+                <input type="mobileNumber" id="mobileNumber">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password">
+            </div>
+            <div>
+                <label for="passwrd">Confirm Password</label>
+                <input type="password" id="confirmpassword">
+            </div>
+
+            <div>
+                <input type="button" value="signin" onclick="signin()" class="signin-btn">
+                <input type="button" value="Register" id="Register-btn" onclick="register()" class="Register-btn">
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+        var mailId = document.getElementById('mail');
+        var password = document.getElementById('password');
+
+        function signin() {
+            window.location.href = '/login.html'
+        }
+
+        function login() {
+            console.log(mailId.value, password.value, mailId.value === "user@gmail.com", password.value == 123456);
+            if (mailId.value === "user@gmail.com" && password.value == 123456) {
+                window.location.href = '/home.html'
+            } else {
+                alert('mail or password is wrong')
+            }
+        }
+        $(document).ready(function () {
+            var regbin = $('#Register-btn');
+            regbin.click(function () {
+                var firstName = $('#firstName').val();
+                var middleName = $('#middleName').val();
+                var lastName = $('#lastName').val();
+                var email = $('#mail').val();
+                var mobileNumber = $('#mobileNumber').val();
+                var password = $('#password').val();
+                var confirmPassword = $('#confirmPassword').val();
+                console.log(firstName, lastName, email, password, confirmPassword);
+
+                if (firstName === "") {
+                    return alert('enter First Name');
+                }
+
+                if (lastName === "") {
+                    return alert('enter Last Name');
+                }
+                if (!validateEmail(email)) {
+                    return alert('enter valid emailid')
+                }
+                if (password === "") {
+                    return alert('enter password');
+                }
+                if (confirmPassword === "") {
+                    return alert('enter confirm Password');
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>
